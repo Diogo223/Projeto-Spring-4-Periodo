@@ -25,7 +25,7 @@ public class ControlleCadastro {
 	@RequestMapping("/cad")
 	public String home(Model model) {
 		model.addAttribute("professor", crudRepository.findAll());
-		return "cadastro.html";
+		return "/cadastro";
 	}
 	
 	
@@ -34,7 +34,7 @@ public class ControlleCadastro {
 
 		crudRepository.save(professor);
 		attributes.addFlashAttribute("mensagen","Cadastrado com sucesso.");
-		return "cadastro.html";
+		return "/cadastro";
 	}
 	
 	
@@ -48,7 +48,7 @@ public class ControlleCadastro {
 	@GetMapping("/editar/{id}")
 	public String editar(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("professor", crudRepository.findById(id));
-		return "editar.html";
+		return "/editar";
 		
 	}
 }
