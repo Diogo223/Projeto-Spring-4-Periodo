@@ -42,7 +42,7 @@ public class ControlleCadastro {
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable("id") Long id) {
 		crudRepository.deleteById(id);
-		return "cadastro.html";
+		return "redirect:cadastro.html";
 		
 	}
 	@GetMapping("/editar/{id}")
