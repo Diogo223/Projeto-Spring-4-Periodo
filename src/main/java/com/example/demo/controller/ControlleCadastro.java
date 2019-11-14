@@ -25,7 +25,7 @@ public class ControlleCadastro {
 	@RequestMapping("/cad")
 	public String home(Model model) {
 		model.addAttribute("professor", crudRepository.findAll());
-		return "/cadastro";
+		return "/cad";
 	}
 	
 	
