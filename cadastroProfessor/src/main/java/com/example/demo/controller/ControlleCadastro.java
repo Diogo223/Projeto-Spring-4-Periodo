@@ -25,7 +25,7 @@ public class ControlleCadastro {
 	@RequestMapping("/cad")
 	public String home(Model model) {
 		model.addAttribute("professor", crudRepository.findAll());
-		return "/cad";
+		return "cadastro";
 	}
 	
 	
@@ -42,7 +42,7 @@ public class ControlleCadastro {
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable("id") Long id) {
 		crudRepository.deleteById(id);
-		return "redirect:/cad";
+		return "redirect:/cadastro";
 		
 	}
 	@GetMapping("/editar/{id}")
