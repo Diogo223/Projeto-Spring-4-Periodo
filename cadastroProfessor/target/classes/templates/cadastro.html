@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+ <meta charset="UTF-8">
+  <title>cadastro</title>
+ <style type="text/css">
+ form{
+	
+}
+#se{
+	margin-left:5%;
+	width: 90%;
+	margin-left:5%;
+	height: 45px;
+	font-size:15px;
+	
+	
+}
+#no{
+	margin-left:5%;
+	width: 90%;
+	
+}
+#cont{
+	background-color: lightblue;
+	width: 50%;
+	border-radius: 25px;
+	margin-left: 20%;
+	border: 3px solid blue;
+}
+#in{
+	margin-left:20%;
+}
+#ip{
+	
+	
+}
+#bt{
+	margin-left: 40%;
+}
+#dt{
+	border-radius: 10px;
+	margin-left:20%;
+	width: 400px;
+	
+}
+#tx{
+	color: blue;
+	margin-left: 35%
+
+}
+label{
+	margin-left: 10%;
+	color:blue;	
+}
+#tabel{
+	margin-left: 20%;
+	background-color: lightblue;
+	border-radius: 25px;
+	width:50%;
+	border: 2px solid blue;
+
+}
+a{
+	color: white
+}
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+p{
+	margin-left:70%;
+	margin-top:10%;
+	color:blue;
+}
+#t{
+	margin-left: 20%;
+	background-color: lightblue;
+	border-radius: 25px;
+	width:50%;
+	border: 2px solid blue;
+}
+ </style>
+ 
+</head>
+<body>
+	
+	
+<a href="/index" class="btn btn-primary" id="cad">Voltar</a>
+  <div id="cont">
+<h1 id="tx">CADASTRO</h1><br>
+
+
+	<form  method="POST" action="/cadastro">
+	<div class="alert alert-sucess" th:text="${mensagen}" th:if="${not #strings.isEmpty(mensagen)}">	
+		<div class="alert alert-danger" th:if="{#fields.detailedErrors()}">
+			<div th:each="detailedError : ${#fields.detailedErrors()}">
+				<span th:text="${detailedError.message}"></span>
+			</div>
+		</div>
+	</div>
+  <label >Nome</label>  
+  <div class="form-group ow-required">
+  <input name="nome" type="text" placeholder="Nome" class="form-control input-md"  id="no">
+    
+  </div>
+  <label id="in">Data</label>  
+  <div class="form-group ow-required">
+  <input type="date" name="data" id="dt">
+    
+  </div>
+
+ 
+  <label id="ip">Intervalo</label>
+  <div class="form-group ow-required">
+    <select class="form-control form-control-lg" id="se" name="intervalo">
+    <option>Selecione</option>
+
+      <option value="manhã">manhã</option>
+      <option value="almoço">almoço</option>
+      <option value="tarde">tarde</option>
+    </select>
+</div><br>
+ 
+  <div class="form-group">
+ 
+    <input type="submit" class="btn btn-primary" id="bt" name="salvar"></input>
+   </div>
+   </form>
+</div>
+	
+
+    <br>
+  <table border="1" id="tabel">
+  <tr id="t">
+  <td>Id</td>
+  <td>Data</td>
+  <td>Intervalo</td>
+  <td>Nome</td>
+  <td> Excluir </td>
+  <td> Editar</td>
+  </tr>
+   <tr th:each="p : ${professor}" id="t">
+   		<td th:text=${p.id}></td>
+   		<td th:text="${p.data}"></td>  
+   		<td th:text="${p.intervalo}"></td> 	
+  		<td th:text=${p.nome}></td>
+  		<td><a class="btn btn-outline-danger"  th:href="@{/delete/{id}(id=${p.id})}">Excluir</a></td>	
+  		<td><a class="btn btn-primary"  th:href="@{/editar/{id}(id=${p.id})}">Editar</a></td>
+  	</tr>
+  </table>
+ <br>
+ 
+</body>
+</html>
