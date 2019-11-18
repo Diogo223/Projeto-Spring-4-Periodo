@@ -103,19 +103,19 @@ p{
 		</div>
 	</div>
   <label >Nome</label>  
-  <div class="form-group ow-required">
+  <div class="form-group ow-required" th:classappend="${#fields.hasErrors('nome')} ? has-error">
   <input name="nome" type="text" placeholder="Nome" class="form-control input-md"  id="no">
     
   </div>
   <label id="in">Data</label>  
-  <div class="form-group ow-required">
+  <div class="form-group ow-required" th:classappend="${#fields.hasErrors('data')} ? has-error">
   <input type="date" name="data" id="dt">
     
   </div>
 
  
   <label id="ip">Intervalo</label>
-  <div class="form-group ow-required">
+  <div class="form-group ow-required" th:classappend="${#fields.hasErrors('intervalo')} ? has-error">
     <select class="form-control form-control-lg" id="se" name="intervalo">
     <option>Selecione</option>
 
