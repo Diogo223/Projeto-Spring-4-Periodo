@@ -57,7 +57,7 @@ public class Professor{
 		return data;
 	}
 	public void setData(String data) {
-		this.data = data;
+		this.data = data; 
 	}
 	
 }
