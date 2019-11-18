@@ -17,12 +17,15 @@ public class Professor{
 	private Long id;
 	
 	@Column
+	@NotNull(message = "data é obrigatório")
 	private String data;
 	
 	@Column
+	@NotNull(message = "intervalo é obrigatório")
 	private String intervalo;
 	
 	@Column
+	@NotNull(message = "nome é obrigatório")
 	private String nome;
 	
 
