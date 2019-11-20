@@ -32,22 +32,24 @@
 	border: 3px solid blue;
 }
 #in{
-	margin-left:20%;
+	margin-left:10%;
 }
-
+#ip{
+	
+	
+}
 #bt{
 	margin-left: 40%;
 }
 #dt{
 	border-radius: 10px;
-	margin-left:20%;
-	width: 400px;
+	margin-left:5%;
+	width: 65%;
 	
 }
 #tx{
 	color: blue;
-	margin-left: 35%
-
+	
 }
 label{
 	margin-left: 10%;
@@ -59,7 +61,6 @@ label{
 	border-radius: 25px;
 	width:50%;
 	border: 2px solid blue;
-
 }
 a{
 	color: white
@@ -88,20 +89,17 @@ p{
 	
 <a href="/index" class="btn btn-primary" id="cad">Voltar</a>
   <div id="cont">
-<h1 id="tx">CADASTRO</h1><br>
+<h1 id="tx" align="center">CADASTRO</h1><br>
 
 
 	<form  method="POST" action="/cadastro">
-	<div class="alert alert-sucess" th:text="${mensagen}" th:if="${not #strings.isEmpty(mensagen)}"></div>	
-	
-	
+	<div class="alert alert-sucess" th:text="${mensagen}" th:if="${not #strings.isEmpty(mensagen)}">	
 		<div class="alert alert-danger" th:if="{#fields.detailedErrors()}">
 			<div th:each="detailedError : ${#fields.detailedErrors()}">
 				<span th:text="${detailedError.message}"></span>
-			</div>	
+			</div>
 		</div>
-		
-	
+	</div>
   <label >Nome</label>  
   <div class="form-group ow-required">
   <input name="nome" type="text" placeholder="Nome" class="form-control input-md"  id="no">
@@ -136,12 +134,12 @@ p{
     <br>
   <table border="1" id="tabel">
   <tr id="t">
-  <td>Id</td>
-  <td>Data</td>
-  <td>Intervalo</td>
-  <td>Nome</td>
-  <td> Excluir </td>
-  <td> Editar</td>
+  <td><b> Id </b></td>
+  <td><b> Data </b></td>
+  <td><b> Intervalo </b></td>
+  <td><b> Nome </b></td>
+  <td><b> Excluir </b></td>
+  <td><b> Editar </b></td>
   </tr>
    <tr th:each="p : ${professor}" id="t">
    		<td th:text=${p.id}></td>
