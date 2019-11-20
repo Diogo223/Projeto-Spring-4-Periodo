@@ -40,7 +40,7 @@ public class ControlleCadastro {
 			
 		crudRepository.save(professor);
 		attributes.addFlashAttribute("mensagen","Cadastrado com sucesso.");
-		return "/cad";
+		return "cadastro.html";
 	}
 	
 	
