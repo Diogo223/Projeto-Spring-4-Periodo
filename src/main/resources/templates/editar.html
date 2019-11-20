@@ -33,7 +33,7 @@
 	margin-left: 20%;
 	border: 3px solid blue;
 }
-	*{
+*{
 	margin: 0px;
 	padding: 0px;
 }
@@ -48,15 +48,14 @@
 	margin-left: 40%;
 }
 #dt{
-	border-radius: 25px;
-	width: 400px;
+	border-radius: 10px;
 	margin-left:5%;
+	width: 65%;
 	
 }
 #tx{
 	color: blue;
-	margin-left: 35%
-
+	
 }
 label{
 	margin-left: 10%;
@@ -86,7 +85,7 @@ p{
 <a href="/cad" class="btn btn-primary" id="cad">Voltar </a>
 
 <div id="cont">
-<h1 id="tx">EDITAR</h1><br>
+<h1 id="tx" align="center">EDITAR</h1><br>
 <form th:object="${professor}" method="POST" action="/cadastro">
 
  <label >Id</label>  
