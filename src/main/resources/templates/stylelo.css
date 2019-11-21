@@ -1,0 +1,22 @@
+
+#cont{
+
+	background-color: lightblue;
+	width: 50%;
+	border-radius: 25px;
+	margin-left: 20%;
+	border: 3px solid blue;
+}
+#tx{
+	color: blue;
+}
+#text{
+	width: 80%;
+	border-radius: 25px;
+}
+#se{
+	width: 80%;
+	border-radius: 25px;
+
+}
+
