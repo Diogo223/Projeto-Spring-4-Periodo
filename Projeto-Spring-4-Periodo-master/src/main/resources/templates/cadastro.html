@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<html  xmlns="http://maven.apache.org/POM/4.0.0" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:th="http://www.thymeleaf.org">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -95,7 +96,7 @@ p{
 <h1 id="tx" align="center">CADASTRO</h1><br>
 
 
-	<form  method="POST" action="/cadastro" th:object="${professor}"  >
+	<form  method="POST" action="/cadastro" th:object="${cliente}"  >
 	<div class="alert alert-sucess" th:text="${mensagen}" th:if="${not #strings.isEmpty(mensagen)}"></div>
 	
 <div class="form-group aw-required">	
