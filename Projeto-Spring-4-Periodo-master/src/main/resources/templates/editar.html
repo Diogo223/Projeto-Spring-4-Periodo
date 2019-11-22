@@ -1,0 +1,129 @@
+	<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+<title>Edição de cadastro</title>
+<meta charset="utf-8">
+<style type="text/css">
+  form{
+	
+}
+#se{
+	margin-left:5%;
+	width: 90%;
+	margin-left:5%;
+	height: 45px;
+	font-size:15px;
+	
+	
+}
+	#di{
+	margin-left:5%;
+	width: 10%;
+}
+#no{
+	margin-left:5%;
+	width: 90%;
+}
+#cont{
+	background-color: lightblue;
+	width: 50%;
+	border-radius: 25px;
+	margin-left: 20%;
+	border: 3px solid blue;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#in{
+	margin-left:20%;
+}
+#ip{
+	
+	
+}
+#bt{
+	margin-left: 40%;
+}
+#dt{
+	border-radius: 10px;
+	margin-left:5%;
+	width: 65%;
+	
+}
+#tx{
+	color: blue;
+	
+}
+label{
+	margin-left: 10%;
+	color:blue;	
+}
+#tabel{
+margin-left: 20%;
+background-color: lightblue;
+width:50%;
+border: 2px solid blue;
+}
+a{
+	color: white
+}
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+p{
+	margin-left:70%;
+	margin-top:10%;
+	color:blue;
+}
+ </style>
+</head>
+<body>
+<a href="/cad" class="btn btn-primary" id="cad">Voltar </a>
+
+<div id="cont">
+<h1 id="tx" align="center">EDITAR</h1><br>
+<form th:object="${professor}" method="POST" action="/cadastro">
+
+ <label >Id</label>  
+  <div class="form-group ow-required">
+  <input type="text" th:field="*{id}" readonly="readonly" class="form-control input-md"  id="di"></input>
+    
+  </div>	
+
+		 <label >Nome</label>  
+  <div class="form-group ow-required">
+  <input type="text" th:field="*{nome}"  class="form-control input-md"  id="no"></input>
+    
+  </div>
+  <label>Data</label>  
+  <div class="form-group ow-required">
+  <input type="date" th:field="*{data}" id="dt"></input>
+    
+  </div>
+
+ 
+  <label>Intervalo</label>
+  <div class="form-group ow-required">
+    <select class="form-control form-control-lg" th:field="*{intervalo}"  id="se">
+    
+      <option value="selecione">Selecione</option>
+      <option value="manhã">manhã</option>
+      <option value="almoço">almoço</option>
+      <option value="tarde">tarde</option>
+    </select>
+</div><br>
+ 
+  <div class="form-group">
+  	
+    <input type="submit" class="btn btn-primary" id="bt" value="Editar"></input>
+   </div>
+
+</form>
+</div>
+
+</body>
+</html>
