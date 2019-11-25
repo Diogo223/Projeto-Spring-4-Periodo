@@ -32,7 +32,6 @@ public class ControlleCadastro {
 	
 	
 	@PostMapping("/cadastro")
-	@RequestMapping(value= "salvar", method = RequestMethod.POST)
 	public Object salvar(@Valid Professor professor, RedirectAttributes attributes) {
 			
 		crudRepository.save(professor);
