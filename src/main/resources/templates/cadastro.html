@@ -95,10 +95,6 @@ p{
 	<form  method="POST" action="/cadastro">
 	<div class="alert alert-sucess" th:text="${mensagen}" th:if="${not #strings.isEmpty(mensagen)}"></div>
 		
-		<div class="alert alert-danger" th:if="{#fields.detailedErrors()}">		</div>
-			<div th:each="detailedError : ${#fields.detailedErrors()}">
-				<span th:text="${detailedError.message}"></span>
-			</div>
 
 	
   <label >Nome</label>  
