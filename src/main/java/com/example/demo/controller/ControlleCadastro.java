@@ -42,14 +42,16 @@ public class ControlleCadastro {
 	
 		
 	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable("id") Long id) {
+	public String delete(@PathVariable("id") Long id, RedirectAttributes attributes) {
 		crudRepository.deleteById(id);
+		attributes.addFlashAttribute("txt","Excluído com sucesso.");
 		return "redirect:/cad";
 		
 	}
 	@GetMapping("/editar/{id}")
-	public String editar(@PathVariable("id") Long id, Model model) {
+	public String editar(@PathVariable("id") Long id, Model model, RedirectAttributes attributes) {
 		model.addAttribute("professor", crudRepository.findById(id));
+		attributes.addFlashAttribute("texto","Editado com sucesso.");
 		return "editar.html";
 		
 	}
