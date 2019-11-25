@@ -13,7 +13,7 @@ import javax.validation.constraints.NotBlank;
 public class Professor{	
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	
 	
 	private Long id;
