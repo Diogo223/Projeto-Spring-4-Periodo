@@ -3,9 +3,13 @@ package com.example.demo.controller.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+
 
 
 
@@ -14,7 +18,6 @@ public class Professor{
 	
 	@Id
 	@GeneratedValue
-	
 	
 	private Long id;
 	
@@ -60,6 +63,11 @@ public class Professor{
 	}
 	public void setData(String data) {
 		this.data = data; 
+	}
+	
+	public void save(@Valid Professor professor) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
