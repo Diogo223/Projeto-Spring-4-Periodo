@@ -1,38 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html  xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:th="http://www.thymeleaf.org">
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <head>
-  <title>LOGIN</title>
+	<title>Login</title>
+</head>
+<style type="text/css">
+	#cont{
+	background-color: lightblue;
+	width: 30%;
+	height: 50%;
+	border-radius: 25px;
+	margin-left: 30%;
+	margin-top: 3%;
+	border: 3px solid blue;
+}
+#no{
+	margin-left:25%;
+	width: 50%;
+	
+}
+#tx{
+	color: blue;
+	margin-left: 35%
 
-  <link rel="stylesheet" type="text/css" href="stylelo.css">
+}
+#bt{
+	margin-left: 40%;
+	width: 20%
+}
+#in{
+	margin-left:20%;
+	color: blue
+}
+</style>
+<body>
+	<div id="cont"> 
+		<h1 id="tx">Login</h1><br>
+	<form th:action="@{/login}" method="post">
 
+		<label id="in">Usuário:</label>  
+  <input name="username" class="form-control" placeholder="Usuário"/  id="no"><br>
 
-  <div id="cont"> 
-<h1 id="tx" align="center">LOGIN</h1><br>
-
-<div class="form-group" align="center">
-  <label class="col-md-4 control-label" for="textinput">USUARIO:</label>  
-
-  <div class="form-group ow-required">
-  <div class="col-md-4" id="text">
-  <input name="textinput" type="text" class="form-control input-md">
-</div>
-</div>
-
-<div class="form-group"  align="center">
-  <label class="col-md-4 control-label">SENHA:</label>
-   <div class="form-group ow-required" >
-  <div class="col-md-4" id="se">
-    <input id="passwordinput" name="passwordinput" type="password"  class="form-control input-md">
-</div>
-</div>
-
-  <div>   
-    <input type="submit" class="btn btn-primary" ></input>
-</div>
-
+   		<label id="in">Senha:</label>  
+  <input type="password" name="password" class="form-control" placeholder="Senha"/  id="no"><br>
+ 
+  <button class="btn btn-primary btn-block" id="bt">Entrar</button>
+</form>
 </div>
 </body>
-</html>
-
 </html>
