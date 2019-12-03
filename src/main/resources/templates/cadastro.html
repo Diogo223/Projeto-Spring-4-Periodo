@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<html  xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:th="http://www.thymeleaf.org">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -81,6 +82,9 @@ p{
 	width:50%;
 	border: 2px solid blue;
 }
+.aw-required > .control-label:after {
+	content: "*";
+}
  </style>
  
 </head>
@@ -92,25 +96,31 @@ p{
 <h1 id="tx" align="center">CADASTRO</h1><br>
 
 
-	<form  method="POST" action="/cadastro">
-	<div class="alert alert-sucess" th:text="${mensagen}" th:if="${not #strings.isEmpty(mensagen)}"></div>
-		<div class="alert alert-sucess" th:text="${texto}" th:if="${not #strings.isEmpty(texto)}"></div>
-		<div class="alert alert-sucess" th:text="${txt}" th:if="${not #strings.isEmpty(txt)}"></div>
-		
-
+	<form  method="GET" action="/cadastro" th:object="${professor}"  >
 	
+	<div class="alert alert-sucess" th:text="${mensagen}" th:if="${not #strings.isEmpty(mensagen)}"></div>
+	
+	<div class="alert alert-sucess" th:text="${texto}" th:if="${not #strings.isEmpty(texto)}"></div>
+	
+	<div class="alert alert-sucess" th:text="${txt}" th:if="${not #strings.isEmpty(txt)}"></div>
+	
+<div class="form-group aw-required">	
   <label >Nome</label>  
-  <div class="form-group ow-required">
+  <div class="form-group ow-required" >
   <input name="nome" type="text" placeholder="Nome" class="form-control input-md"  id="no">
     
   </div>
+  
+  <div class="form-group aw-required" >
   <label id="in">Data</label>  
   <div class="form-group ow-required">
   <input type="date" name="data" id="dt">
-    
+    </div>
   </div>
 
+ </div>
  
+ <div class="form-group aw-required">
   <label id="ip">Intervalo</label>
   <div class="form-group ow-required">
     <select class="form-control form-control-lg" id="se" name="intervalo">
@@ -121,7 +131,7 @@ p{
       <option value="tarde">tarde</option>
     </select>
 </div><br>
- 
+ </div>
   <div class="form-group">
  
     <input type="submit" class="btn btn-primary" id="bt" name="salvar"></input>
