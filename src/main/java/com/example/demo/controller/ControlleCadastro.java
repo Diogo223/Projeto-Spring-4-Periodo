@@ -20,11 +20,24 @@ public class ControlleCadastro {
 	CrudRepository crudRepository;
 
 	
-	 @GetMapping("/login")
-	  public String login() {
-	    return "login.html";
+	 @GetMapping("/userCad")
+	  public String login( Model model) {
+		model.addAttribute("professor", crudRepository.findAll());
+	    return "cadastroUser.html";
 	  }
-	 
+	 @GetMapping("/cadastroUsers")
+		public Object salvarUser(@Valid Professor professor, BindingResult result, RedirectAttributes attributes) {
+			if (result.hasErrors()) {
+				
+	 		}
+			crudRepository.save(professor);
+			attributes.addFlashAttribute("mensagen","Cadastrado com sucesso.");
+			return "/userCad";
+		}
+	 @GetMapping("/sobre")
+	  public String sobre() {
+	    return "sobre.html";
+	  }
 	@GetMapping("/cad")
 	public String home(Model model) {
 		model.addAttribute("professor", crudRepository.findAll());
@@ -38,7 +51,7 @@ public class ControlleCadastro {
  		}
 		crudRepository.save(professor);
 		attributes.addFlashAttribute("mensagen","Cadastrado com sucesso.");
-		return "redirect:/cad";
+		return "redirect:/userCad";
 	}
 
 	@GetMapping("/delete/{id}")

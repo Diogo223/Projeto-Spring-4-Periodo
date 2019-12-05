@@ -6,7 +6,7 @@
 
 <head>
  <meta charset="UTF-8">
-  <title>cadastro</title>
+  <title>Página do Usuário</title>
  <style type="text/css">
  form{
 	
@@ -52,7 +52,6 @@
 	color: blue;
 	
 }
-
 #tx1{
 	color: blue;
 	font-size: 40px;
@@ -156,19 +155,16 @@ p{
   <td><b> Data </b></td>
   <td><b> Intervalo </b></td>
   <td><b> Nome </b></td>
-  <td><b> Excluir </b></td>
-  <td><b> Editar </b></td>
+  
   </tr>
    <tr th:each="p : ${professor}" id="t">
    		<td th:text=${p.id}></td>
    		<td th:text="${p.data}"></td>  
    		<td th:text="${p.intervalo}"></td> 	
   		<td th:text=${p.nome}></td>
-  		<td><a class="btn btn-outline-danger"  th:href="@{/delete/{id}(id=${p.id})}">Excluir</a></td>	
-  		<td><a class="btn btn-primary"  th:href="@{/editar/{id}(id=${p.id})}">Editar</a></td>
   	</tr>
   </table>
-</div>
+  </div>
  <br>
  
 </body>

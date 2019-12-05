@@ -13,5 +13,9 @@ public class controllerIndex {
 	public String home() {
 		return "index.html";
 	}
+	@GetMapping("/indexUser")
+	public String cad() {
+		return "cadastroUser.html";
+	}
 	  
 }

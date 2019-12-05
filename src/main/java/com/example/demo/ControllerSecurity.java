@@ -44,12 +44,15 @@ public class ControllerSecurity extends WebSecurityConfigurerAdapter {
 		
 		.antMatchers("/resources/**", "/webjars/**").permitAll()
 		
-		.antMatchers("/index").hasAnyRole("ADMIN , USER")
-		.antMatchers("/user").hasAnyRole("ADMIN , USER")
-		.antMatchers("/cadUser").hasAnyRole("ADMIN , USER")
-		.antMatchers("/editar").hasRole("ADMIN")
-		.antMatchers("/delete").hasRole("ADMIN")
-	
+		.antMatchers("/index").hasAnyRole("ADMIN,USER")
+		.antMatchers("/cad").hasRole("ADMIN")
+		.antMatchers("/cadastroUsers").hasAnyRole("USER, ADMIN")
+		.antMatchers("/editar/id").hasRole("ADMIN")
+		.antMatchers("/delete/id").hasRole("ADMIN")
+		.antMatchers("/userCad").hasAnyRole("ADMIN, USER")
+		.antMatchers("/sobre").hasAnyRole("ADMIN, USER")
+		.antMatchers("/sair").hasAnyRole("ADMIN, USER")
+			
 		.
 		anyRequest().authenticated()
 		.and()
