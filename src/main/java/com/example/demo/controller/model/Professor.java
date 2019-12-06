@@ -7,9 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-
 
 
 
@@ -29,7 +26,7 @@ public class Professor{
 	@Column
 	private String intervalo;
 	
-	@NotNull(message = "nome é obrigatório")
+	@NotBlank(message = "nome é obrigatório")
 	@Column
 	private String nome;
 	
